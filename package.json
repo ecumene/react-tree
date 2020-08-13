@@ -1,0 +1,51 @@
+{
+  "name": "react-use-tree",
+  "version": "0.0.1",
+  "main": "dist/react-use-tree.cjs.js",
+  "module": "dist/react-use-tree.esm.js",
+  "browser": "dist/react-use-tree.umd.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ecumene/react-use-tree"
+  },
+  "devDependencies": {
+    "@babel/core": "7.11.0",
+    "@babel/preset-env": "7.11.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "24.9.0",
+    "concurrently": "4.1.2",
+    "jest": "^26.2.2",
+    "rollup": "1.32.1",
+    "rollup-plugin-babel": "4.4.0",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "serve": "11.3.2"
+  },
+  "scripts": {
+    "prepare": "yarn build",
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "watch": "concurrently 'yarn build:watch' 'yarn serve -l tcp://127.0.0.1'",
+    "test": "jest && yarn build"
+  },
+  "renovate": {
+    "extends": [
+      "config:js-lib"
+    ],
+    "automerge": true,
+    "major": {
+      "automerge": false
+    },
+    "automergeType": "branch"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@testing-library/react-hooks": "^3.4.1",
+    "react": "^16.13.1",
+    "react-test-renderer": "^16.13.1",
+    "react-use-gesture": "^7.0.15"
+  }
+}
